@@ -142,7 +142,8 @@ class TootButton extends HTMLElement {
         console.log(this.domain, this.imgSize)
         if (this.imgSrc) { return this.imgSrc }
         //return `http://www.google.com/s2/favicons?domain=${this.domain}`
-        return `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://${this.domain}&size=${this.imgSize}`
+        if (this.domain) { return `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://${this.domain}&size=${this.imgSize}` }
+        return `./asset/image/mastodon_mascot.svg`
         /*
         if (this.imgSrc) { return this.imgSrc }
         if (this.img) {
